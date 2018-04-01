@@ -1,5 +1,17 @@
-import React from 'react';
-const PostIndex = () =>{
-  return(<h1>POST INDEX</h1>)
+import React,{Component} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {fetchPost} from '../actions/actions';
+
+class PostIndex extends Component{
+  componentDidMount(){
+    this.props.fetchPost();
+  }
+  render(){
+    return(
+    <Link to="/newpost" className="btn btn-primary">Make new post</Link>
+    );
+  }
 }
-export default PostIndex;
+
+export default connect(null,{fetchPost})(PostIndex);
