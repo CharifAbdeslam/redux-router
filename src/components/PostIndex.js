@@ -13,5 +13,9 @@ class PostIndex extends Component{
     );
   }
 }
-
-export default connect(null,{fetchPost})(PostIndex);
+function mapStateToProps(state){
+  return{
+    posts:state.posts
+  }
+}
+export default connect(mapStateToProps,{fetchPost})(PostIndex);

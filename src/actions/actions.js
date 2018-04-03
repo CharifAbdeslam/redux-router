@@ -16,7 +16,8 @@ export function showResult(props){
   const req = fetch(`${ROOT_URL}/posts${API_KEY}`, {
                     method: "POST",
                     body:props
-                  });
+                  })
+
   return{
     type:CREATE_POST,
     payload:req

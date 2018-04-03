@@ -8,16 +8,13 @@ import promise from 'redux-promise';
 import App from './components/App';
 import {showResult} from './actions/actions';
 import NewPost from './components/NewPost';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 const createStoreWithMiddleware = applyMiddleware(
 promise
 )(createStore)
-const st=()=>{
-  console.log("hello")
-}
 ReactDOM.render(
+
     <Provider store={createStoreWithMiddleware(rootReducers)}>
       <Router>
         <Switch>
