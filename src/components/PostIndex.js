@@ -12,7 +12,7 @@ class PostIndex extends Component{
     <Link to="/newpost" className="btn btn-primary">Make new post</Link>
     {
            this.props.posts.map(cat=>{
-             return(<ListGroup>
+             return(<ListGroup  key={cat.id}>
                <Link to={"posts/" + cat.id}>
                  <ListGroupItem>{cat.id}{cat.categories}</ListGroupItem>
                </Link>
